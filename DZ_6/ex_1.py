@@ -18,6 +18,8 @@ s = ".,:;!_*-+()/#%&@"
 
 score = 0
 
+print("Recommendation:")
+
 if len(text) >= 8:
     score += 1
 else:
@@ -51,7 +53,13 @@ for char in s:
 else:
     print('Use special characters')
 
+
+if score == 5:
+        print('No recommendation ')
+
 print('Passwor score', score)
+
+
 
 
 
