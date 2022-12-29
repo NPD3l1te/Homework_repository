@@ -1,0 +1,93 @@
+"""
+1.
+Ошибка типа TypeError
+Описание: ошибка возникает, когда некоторое значение относится не к тому типу, к которому должно относиться.
+Пример:
+
+a = 2
+b = 'gg'
+a + b
+
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+"""
+
+
+
+"""
+2.
+Арифметические ошибки ArithmeticError
+Ошибка типа  (ZeroDivisionError)
+Описание: поднимается, при попытках деления (в том числе делении по модулю) на ноль.
+Пример:
+
+ 10 / 0
+
+ ZeroDivisionError: division by zero
+"""
+
+
+
+"""
+3.
+Ошибка утверждения AssertionError
+Описание: когда инструкция утверждения не верна, вызывается ошибка утверждения.
+Пример:
+
+try:
+    a = 100
+    b = "PythonRu"
+    assert a == b
+except AssertionError:
+    print("Исключение AssertionError.")
+else:
+    print("Ошибок нет ")
+
+    AssertionError
+"""
+
+
+
+"""
+4.
+Ошибка атрибута AttributeError
+Описаниe: при попытке сослаться на несуществующий атрибут программа вернет ошибку атрибута.
+Пример:
+
+
+'
+class Attributes(obj):
+    a = 2
+    print(a)
+'
+
+class Attributes(obj):
+    a = 2
+    print(a)
+
+try:
+    obj = Attributes()
+    print(obj.attribute)
+except AttributeError:
+    print("Исключение AttributeError.")
+
+AttributeError
+"""
+
+
+"""
+5.
+Ошибка типа IndentationError
+Описание:Исключение, возникающее в случаях ошибок отступа. Поднимается, если парсер обнаруживает в коде ошибку отступа.
+В примере  строка документации к нашей функции не имеет отступа.
+Пример:
+
+a = 10
+
+    print(a)
+
+IndentationError
+"""
+
+
+
+
