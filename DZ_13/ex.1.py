@@ -1,13 +1,8 @@
-def change(arr):
-    arr = list(map(int, input('Enter whole numbers separated by spaces').split()))
-    print(arr)
-    k = -1
-
-    for i in range(len(arr) // 2):
-        print('\nbefore ', i, arr)
-        arr[k], arr[i] = arr[i], arr[k]
-        print('after ', arr)
-        k -= 1
+def change(list):
+    list = ['fgdg', 3, 5, 'jifjfhf', 7, 'gg']
+    print(list)
+    list[0], list[-1] = list[-1], list[0]
+    print(list)
 
 
-print(change(arr=list))
+change(list)
