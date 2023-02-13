@@ -1,16 +1,16 @@
-import time
+from functools import lru_cache
 
 
-def cache_decorator(func):
-    def inner(*args, **kwargs):
-        start = time.time()
-        res = func(*args, **kwargs)
-        print(time.time() - start)
-        return res
+# def decorating_function(user_function):
+#     wrapper = _lru_cache_wrapper(user_function, maxsize, typed, _CacheInfo)
+#     wrapper.cache_parameters = lambda: {'maxsize': maxsize, 'typed': typed}
+#     return update_wrapper(wrapper, user_function)
+#
+#
+# return decorating_function
 
-    return inner()
 
-
+@lru_cache
 def steps_to(stair):
     if stair == 1:
         return 1
@@ -26,13 +26,14 @@ def steps_to(stair):
         )
 
 
+@lru_cache
 def square_area(a: float) -> float:
     print(f'Вызвана функция square_area с аргументом {a} ')
     return a * a
 
 
-print('Результат выполнения steps_to(20):', steps_to(20))
-print('Результат выполнения steps_to(20):', steps_to(20))
-print('Результат выполнения square_area(5):', square_area(5))
 print('Результат выполнения steps_to(30):', steps_to(30))
+print('Результат выполнения steps_to(30):', steps_to(30))
+print('Результат выполнения square_area(5):', square_area(5))
+print('Результат выполнения steps_to(20):', steps_to(20))
 print('Результат выполнения square_area(5):', square_area(5))
