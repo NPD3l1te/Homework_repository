@@ -1,11 +1,11 @@
 def cache_decorator(func):
     d = {}
 
-    def inner(*args):
+    def inner(*args, **kwargs):
         try:
             return d[args]
         except KeyError:
-            res = func(*args)
+            res = func(*args, **kwargs)
             d[args] = res
             return res
 
