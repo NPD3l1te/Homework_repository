@@ -1,16 +1,18 @@
-from functools import lru_cache
+def cache_decorator(func):
+    d = {}
+
+    def inner(*args):
+        try:
+            return d[args]
+        except KeyError:
+            res = func(*args)
+            d[args] = res
+            return res
+
+    return inner
 
 
-# def decorating_function(user_function):
-#     wrapper = _lru_cache_wrapper(user_function, maxsize, typed, _CacheInfo)
-#     wrapper.cache_parameters = lambda: {'maxsize': maxsize, 'typed': typed}
-#     return update_wrapper(wrapper, user_function)
-#
-#
-# return decorating_function
-
-
-@lru_cache
+@cache_decorator
 def steps_to(stair):
     if stair == 1:
         return 1
@@ -26,14 +28,14 @@ def steps_to(stair):
         )
 
 
-@lru_cache
+@cache_decorator
 def square_area(a: float) -> float:
     print(f'Вызвана функция square_area с аргументом {a} ')
     return a * a
 
 
-print('Результат выполнения steps_to(30):', steps_to(30))
-print('Результат выполнения steps_to(30):', steps_to(30))
+print('Результат выполнения steps_to(50):', steps_to(50))
+print('Результат выполнения steps_to(50):', steps_to(50))
 print('Результат выполнения square_area(5):', square_area(5))
 print('Результат выполнения steps_to(20):', steps_to(20))
 print('Результат выполнения square_area(5):', square_area(5))
