@@ -6,7 +6,7 @@ my_list = [
     {'name': 'Mark', 'phone_number': '+3803333333333'}
 ]
 
-with open('my_list.pkl', 'wb') as f:
+with open('my_list.txt', 'wb') as f:
     pickle.dump(my_list, f)
 
 
