@@ -1,7 +1,8 @@
 import random
 
-lst = [random.randint(0, 200) for i in range(100)]
-print(lst)
+numbers = [random.randint(0, 200) for i in range(100)]
 
-f = open('random_numbers.txt', 'w')
-f.write(f"{lst}")
+with open('random_numbers.txt', 'w') as f:
+    for number in numbers:
+        f.write(str(number) + '\n')
+
